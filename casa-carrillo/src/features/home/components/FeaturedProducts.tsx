@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useProducts } from '@/features/products/hooks/useProducts'
 import { ProductGrid } from '@/features/products/components/ProductGrid'
+import { Reveal } from '@/components/common/Reveal'
 import { paths } from '@/routes/paths'
 
 export function FeaturedProducts() {
@@ -11,7 +12,7 @@ export function FeaturedProducts() {
   return (
     <section className="bg-cream-100 py-16" aria-labelledby="featured-title">
       <div className="container-page">
-        <div className="mb-8 flex items-end justify-between gap-4">
+        <Reveal className="mb-8 flex items-end justify-between gap-4">
           <div>
             <h2 id="featured-title" className="text-3xl md:text-4xl">
               Piezas destacadas
@@ -24,7 +25,7 @@ export function FeaturedProducts() {
           >
             Ver todo <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
-        </div>
+        </Reveal>
 
         <ProductGrid products={data?.items} loading={isLoading} skeletonCount={6} />
       </div>

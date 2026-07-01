@@ -32,9 +32,7 @@ function ProductCardBase({ product }: ProductCardProps) {
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition-shadow hover:shadow-card"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition-shadow hover:shadow-card"
     >
       {/* Badges */}
       <div className="absolute left-3 top-3 z-10 flex flex-col gap-1.5">

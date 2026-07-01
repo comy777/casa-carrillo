@@ -3,6 +3,7 @@ import { Mail } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { z } from 'zod'
 import { Button } from '@/components/ui/Button'
+import { Reveal } from '@/components/common/Reveal'
 
 const emailSchema = z.string().email()
 
@@ -21,7 +22,7 @@ export function Newsletter() {
 
   return (
     <section className="container-page py-16">
-      <div className="rounded-3xl bg-gradient-to-br from-terracotta-500 to-terracotta-700 p-8 text-center text-cream-50 md:p-14">
+      <Reveal className="rounded-3xl bg-gradient-to-br from-terracotta-500 to-terracotta-700 p-8 text-center text-cream-50 md:p-14">
         <Mail className="mx-auto mb-4 h-10 w-10" aria-hidden />
         <h2 className="text-3xl text-cream-50 md:text-4xl">Únete a nuestra comunidad</h2>
         <p className="mx-auto mt-3 max-w-md text-cream-100/90">
@@ -43,7 +44,7 @@ export function Newsletter() {
             Suscribirme
           </Button>
         </form>
-      </div>
+      </Reveal>
     </section>
   )
 }

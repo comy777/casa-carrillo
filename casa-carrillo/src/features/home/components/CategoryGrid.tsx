@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useCategories } from '@/features/products/hooks/useCategories'
 import { LazyImage } from '@/components/common/LazyImage'
 import { Skeleton } from '@/components/ui/Skeleton'
+import { Reveal } from '@/components/common/Reveal'
 import { paths } from '@/routes/paths'
 
 export function CategoryGrid() {
@@ -10,12 +11,12 @@ export function CategoryGrid() {
 
   return (
     <section className="container-page py-16" aria-labelledby="cat-title">
-      <div className="mb-8 text-center">
+      <Reveal className="mb-8 text-center">
         <h2 id="cat-title" className="text-3xl md:text-4xl">
           Explora por categoría
         </h2>
         <p className="mt-2 text-brown-600">Encuentra la pieza perfecta para cada rincón</p>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
         {isLoading

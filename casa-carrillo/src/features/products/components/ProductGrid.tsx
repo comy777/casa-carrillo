@@ -3,6 +3,7 @@ import type { Product } from '@/types'
 import { ProductCard } from './ProductCard'
 import { ProductCardSkeleton } from '@/components/ui/Skeleton'
 import { EmptyState } from '@/components/ui/EmptyState'
+import { Reveal } from '@/components/common/Reveal'
 
 interface ProductGridProps {
   products?: Product[]
@@ -34,8 +35,11 @@ export function ProductGrid({ products, loading, skeletonCount = 6 }: ProductGri
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
+      {products.map((p, i) => (
+        // Stagger por columna para un revelado escalonado al hacer scroll.
+        <Reveal key={p.id} delay={(i % 3) * 0.08}>
+          <ProductCard product={p} />
+        </Reveal>
       ))}
     </div>
   )
