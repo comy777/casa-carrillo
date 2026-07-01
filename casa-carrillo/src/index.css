@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ *
+ * Design tokens — paleta tierra de Casa Carrillo.
+ * Tailwind v4 genera utilidades automáticamente desde estas vars:
+ *   bg-terracotta-500, text-brown-800, font-serif, etc.
+ * ------------------------------------------------------------------ */
+@theme {
+  --color-cream-50: #fbf8f3;
+  --color-cream-100: #f6efe4;
+  --color-sand-100: #efe6d7;
+  --color-sand-200: #e4d5bf;
+  --color-sand-300: #d8c3a5;
+  --color-clay-300: #d9b48f;
+  --color-clay-400: #cf9d72;
+  --color-terracotta-400: #cc7c5e;
+  --color-terracotta-500: #bc6c49;
+  --color-terracotta-600: #a5563a;
+  --color-terracotta-700: #8a4530;
+  --color-brown-600: #7a5943;
+  --color-brown-700: #5f4535;
+  --color-brown-800: #43301f;
+  --color-brown-900: #2c2016;
+  --color-olive-500: #7c7a52;
+
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+
+  --shadow-soft: 0 4px 20px -4px rgba(67, 48, 31, 0.12);
+  --shadow-card: 0 8px 30px -10px rgba(67, 48, 31, 0.18);
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-cream-50);
+    color: var(--color-brown-800);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    color: var(--color-brown-900);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  /* Focus visible accesible en toda la app */
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    width: 100%;
+    max-width: 80rem; /* 1280px */
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Skeleton shimmer */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-sand-100) 25%,
+      var(--color-cream-100) 37%,
+      var(--color-sand-100) 63%
+    );
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
